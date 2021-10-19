@@ -18,6 +18,7 @@ dependencies:
   get_storage: null
   hive: ^2.0.4
   logging: ^1.0.2
+  flutter_native_splash: ^1.2.4
 
 dev_dependencies:
   flutter_test:

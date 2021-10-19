@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_hive_template/app/ui/theme/app_text_theme.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/home_controller.dart';
@@ -24,8 +25,8 @@ class HomePage extends GetView<HomeController> {
             automaticallyImplyLeading: false),
         body: SafeArea(
           child: Center(
-            child: Obx(() => Text("${controller.count.value}",
-                style: Theme.of(context).textTheme.headline1)),
+            child:
+                Obx(() => Text("${controller.count.value}", style: headline1)),
           ),
         ),
         floatingActionButton: FloatingActionButton(
