@@ -96,10 +96,9 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-* [MongoDB](https://www.mongodb.com/) - Database
-* [Express](https://expressjs.com/) - Server Framework
-* [VueJs](https://vuejs.org/) - Web Framework
-* [NodeJs](https://nodejs.org/en/) - Server Environment
+* [Flutter](https://flutter.dev/) - Flutter is Google's UI toolkit for building beautiful, natively compiled applications for mobile, web, desktop, and embedded devices from a single codebase.
+* [Getx](https://github.com/jonataslaw/getx) - GetX is an extra-light and powerful solution for Flutter.
+* [Hive](https://pub.flutter-io.cn/packages/hive) -Hive is a lightweight and blazing fast key-value database written in pure Dart.
 
 ## ✍️ Authors <a name = "authors"></a>
 
