@@ -1,0 +1,15 @@
+import 'package:get/get.dart';
+
+import '../bindings/home_binding.dart';
+import '../ui/pages/home_page/home_page.dart';
+
+part './app_routes.dart';
+
+abstract class AppPages {
+  static final pages = [
+    GetPage(
+        name: Routes.INITIAL,
+        page: () => const HomePage(),
+        binding: HomeBinding()),
+  ];
+}
