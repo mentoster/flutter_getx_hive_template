@@ -1,8 +1,11 @@
 import 'package:get_storage/get_storage.dart';
 import 'package:logging/logging.dart';
 
+import 'logging_service/log_setup.dart';
+
 Future<void> initServices() async {
-  final log = Logger('initServices: ');
+  setupLogging();
+  final log = Logger('initServices');
 
   log.info('Starting services ...');
 

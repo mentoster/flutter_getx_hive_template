@@ -16,7 +16,7 @@ void main() async {
     darkTheme: appThemeDataDark,
     themeMode: ThemeMode.system,
     locale: Get.deviceLocale,
-    defaultTransition: Transition.fade,
+    defaultTransition: Transition.cupertino,
     getPages: AppPages.pages,
     initialRoute: Routes.SPLASH,
     initialBinding: SplashBinding(),

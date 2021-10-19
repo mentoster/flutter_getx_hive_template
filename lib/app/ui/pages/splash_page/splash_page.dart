@@ -9,7 +9,8 @@ class SplashPage extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Image.asset("assets/images/cat_avatar.jpg")),
+      body: SafeArea(
+          child: Center(child: Image.asset("assets/images/cat_avatar.jpg"))),
     );
   }
 }

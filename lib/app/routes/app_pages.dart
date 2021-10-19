@@ -1,3 +1,4 @@
+import 'package:flutter_getx_hive_template/app/ui/pages/info_page/info_page.dart';
 import 'package:get/get.dart';
 
 import '../bindings/home_binding.dart';
@@ -11,5 +12,6 @@ abstract class AppPages {
         name: Routes.INITIAL,
         page: () => const HomePage(),
         binding: HomeBinding()),
+    GetPage(name: Routes.INFO, page: () => InfoPage()),
   ];
 }
