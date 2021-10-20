@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_hive_template/app/data/models/user_model.dart';
-import 'package:flutter_getx_hive_template/app/ui/global_widgets/pages_buttons.dart';
-import 'package:flutter_getx_hive_template/app/ui/theme/app_constants.dart';
 import 'package:get/get.dart';
-import 'package:logging/logging.dart';
+
 import '../../../controllers/info_controller.dart';
+import '../../../data/models/user_model.dart';
+import '../../global_widgets/pages_buttons.dart';
+import '../../theme/app_constants.dart';
 
 class InfoPage extends GetView<InfoController> {
   const InfoPage({Key? key}) : super(key: key);

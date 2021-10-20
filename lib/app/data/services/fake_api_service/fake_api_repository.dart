@@ -1,7 +1,7 @@
-import 'package:flutter_getx_hive_template/app/data/models/models_generated/user_generated.dart';
-import 'package:flutter_getx_hive_template/app/data/models/user_model.dart';
 import 'package:logging/logging.dart';
 
+import '../../models/models_generated/user_generated.dart';
+import '../../models/user_model.dart';
 import 'fake_api_provider.dart';
 
 class FakeUserRepository {

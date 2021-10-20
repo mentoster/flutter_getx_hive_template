@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_hive_template/app/ui/global_widgets/pages_buttons.dart';
-import 'package:flutter_getx_hive_template/app/ui/theme/app_text_theme.dart';
+import '../../global_widgets/pages_buttons.dart';
+import '../../theme/app_text_theme.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/home_controller.dart';
