@@ -8,9 +8,9 @@ class PagesButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Column(
       children: [
+        const Divider(),
         ElevatedButton(
             onPressed: () {
               Get.toNamed(Routes.INITIAL);
@@ -26,6 +26,7 @@ class PagesButtons extends StatelessWidget {
               Get.toNamed(Routes.LOGIN);
             },
             child: const Text('Login page')),
+        const Divider(),
       ],
     );
   }
