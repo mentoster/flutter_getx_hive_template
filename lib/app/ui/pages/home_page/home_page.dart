@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_hive_template/app/ui/global_widgets/pages_buttons.dart';
 import 'package:flutter_getx_hive_template/app/ui/theme/app_text_theme.dart';
 import 'package:get/get.dart';
 
@@ -25,8 +26,13 @@ class HomePage extends GetView<HomeController> {
             automaticallyImplyLeading: false),
         body: SafeArea(
           child: Center(
-            child:
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
                 Obx(() => Text("${controller.count.value}", style: headline1)),
+                const PagesButtons()
+              ],
+            ),
           ),
         ),
         floatingActionButton: FloatingActionButton(

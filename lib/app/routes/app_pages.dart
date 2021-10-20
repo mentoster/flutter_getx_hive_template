@@ -1,5 +1,7 @@
 import 'package:flutter_getx_hive_template/app/bindings/info_binding.dart';
+import 'package:flutter_getx_hive_template/app/bindings/login_binding.dart';
 import 'package:flutter_getx_hive_template/app/ui/pages/info_page/info_page.dart';
+import 'package:flutter_getx_hive_template/app/ui/pages/login_page/login_page.dart';
 import 'package:get/get.dart';
 
 import '../bindings/home_binding.dart';
@@ -17,5 +19,9 @@ abstract class AppPages {
         name: Routes.INFO,
         page: () => const InfoPage(),
         binding: InfoBinding()),
+    GetPage(
+        name: Routes.LOGIN,
+        page: () => const LoginPage(),
+        binding: LoginBinding()),
   ];
 }

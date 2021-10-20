@@ -15,10 +15,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: null
   get_cli: null
-  get_storage: null
-  hive: ^2.0.4
   logging: ^1.0.2
   flutter_native_splash: ^1.2.4
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -31,5 +31,3 @@ flutter:
 
   assets:
     - assets/images/
-flutter_intl:
-  enabled: false

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_hive_template/app/data/models/user_model.dart';
+import 'package:flutter_getx_hive_template/app/ui/global_widgets/pages_buttons.dart';
 import 'package:flutter_getx_hive_template/app/ui/theme/app_constants.dart';
 import 'package:get/get.dart';
 import 'package:logging/logging.dart';
@@ -89,19 +90,12 @@ class InfoPage extends GetView<InfoController> {
                         children: [
                           ElevatedButton(
                               onPressed: () {
-                                print("You! pressed on this button!");
-                              },
-                              child: const Text('Save')),
-                          const SizedBox(
-                            width: defaultPadding,
-                          ),
-                          ElevatedButton(
-                              onPressed: () {
                                 controller.fetchApi();
                               },
                               child: const Text('Get new')),
                         ],
                       ),
+                      const PagesButtons()
                     ],
                   );
                 } else if (snapshot.hasError) {

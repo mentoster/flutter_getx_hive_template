@@ -5,6 +5,6 @@ void setupLogging() {
   Logger.root.onRecord.listen((record) {
     // ignore: avoid_print
     print(
-        '${record.level}: ${record.time} : ${record.loggerName}: ${record.message}');
+        '${record.level}:${record.time}:${record.loggerName}: ${record.message}');
   });
 }
