@@ -1,17 +1,18 @@
+import 'package:flutter_getx_hive_template/app/controllers/root_controller.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:logging/logging.dart';
 
 import '../data/models/login_model.dart';
+import '../routes/app_pages.dart';
 
 class LoginController extends GetxController {
   final log = Logger('LoginController');
-
   var loginModel = LoginModel().obs;
   var registred = false.obs;
   late Box<dynamic> loginBox;
   late Box<dynamic> appSettinsBox;
-
+  RootController rootController = Get.find();
   @override
   void onInit() async {
     // init box
@@ -24,7 +25,10 @@ class LoginController extends GetxController {
   void saveLogin(LoginModel lm) async {
     loginModel.value = lm;
     loginBox.put("userLogin", loginModel.value);
-    loginModel.value.save();
+    if (registred.value == false) {
+      registred.value = true;
+      rootController.registred.value = true;
+    }
   }
 
   void loadLogin() {

@@ -27,7 +27,7 @@ class LoginPage extends GetView<LoginController> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("You already in servive!"),
+                        const Text("You already in servise!"),
                         Text("Email: ${controller.loginModel.value.email}"),
                         Text(
                             "Password: ${controller.loginModel.value.password}"),
@@ -35,7 +35,9 @@ class LoginPage extends GetView<LoginController> {
                     )
                   : Container()),
               _SignInForm(),
-              const PagesButtons(),
+              controller.registred.value == true
+                  ? const PagesButtons()
+                  : const SizedBox(),
             ],
           ),
         ));
@@ -43,7 +45,7 @@ class LoginPage extends GetView<LoginController> {
 }
 
 class _SignInForm extends StatefulWidget {
-  final log = Logger('SignInForn');
+  final log = Logger('SignInForm');
   final LoginController _controller = Get.find();
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
   final _passwordController = TextEditingController();
@@ -110,7 +112,7 @@ class __SignInFormState extends State<_SignInForm> {
             ),
             ElevatedButton(
                 onPressed: _onLoginButtonPressed,
-                child: const Text('Save information')),
+                child: const Text('Registration')),
             const SizedBox(
               height: 20,
             ),
