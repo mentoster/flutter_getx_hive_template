@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_hive_template/app/ui/global_widgets/pages_buttons.dart';
 import 'package:get/get.dart';
 import '../../../controllers/login_controller.dart';
 
@@ -89,6 +90,7 @@ class __SignInFormState extends State<_SignInForm> {
             const SizedBox(
               height: 20,
             ),
+            PagesButtons(),
           ],
         ),
       ),
