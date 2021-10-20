@@ -99,7 +99,7 @@ Add additional notes about how to deploy this on a live system.
 * [Flutter](https://flutter.dev/) - Flutter is Google's UI toolkit for building beautiful, natively compiled applications for mobile, web, desktop, and embedded devices from a single codebase.
 * [Getx](https://github.com/jonataslaw/getx) - GetX is an extra-light and powerful solution for Flutter.
 * [Hive](https://pub.flutter-io.cn/packages/hive) -Hive is a lightweight and blazing fast key-value database written in pure Dart.
-
+* [flutter_native_splash ](https://pub.dev/packages/flutter_native_splash) - This package automatically generates iOS, Android, and Web-native code for customizing this native splash screen background color and splash image. Supports dark mode, full screen, and platform-specific options.
 ## ✍️ Authors <a name = "authors"></a>
 
 * [@mentoster](https://github.com/mentoster) - Idea & Initial work
