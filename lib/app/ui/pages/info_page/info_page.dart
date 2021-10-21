@@ -4,7 +4,11 @@ import 'package:get/get.dart';
 import '../../../controllers/info_controller.dart';
 import '../../../data/models/user_model.dart';
 import '../../global_widgets/pages_buttons.dart';
-import '../../theme/app_constants.dart';
+import 'widgets/error_widget.dart';
+import 'widgets/get_new_button_widget.dart';
+import 'widgets/loading_widget.dart';
+import 'widgets/user_avatar_widget.dart';
+import 'widgets/user_info_card_widget.dart';
 
 class InfoPage extends GetView<InfoController> {
   const InfoPage({Key? key}) : super(key: key);
@@ -17,120 +21,39 @@ class InfoPage extends GetView<InfoController> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                "Counter page",
+                "Info page",
               ),
               IconButton(
                   onPressed: controller.toCounter,
-                  // onPressed: () => {},
                   icon: const Icon(Icons.plus_one))
             ],
           ),
         ),
         body: SafeArea(
-          child: FutureBuilder<UserModel>(
-              future: controller.fetchApi(),
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                if (snapshot.hasData) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(defaultPadding),
-                        child: CircleAvatar(
-                          radius: 30.0,
-                          backgroundColor: Colors.transparent,
-                          child: ClipOval(
-                              child: Image.network(
-                                  "https://www.gravatar.com/avatar/00000000000000000000000000000000")),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(defaultPadding),
-                        child: Card(
-                          child: Column(
-                            children: [
-                              ListTile(
-                                title: Obx(() => Text(
-                                    controller.userModel.value.name,
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.w500))),
-                                subtitle: Obx(() => Text(
-                                    controller.userModel.value.maidenName)),
-                                leading: Icon(
-                                  Icons.account_circle_outlined,
-                                  color: Colors.blue[500],
-                                ),
-                              ),
-                              const Divider(),
-                              ListTile(
-                                title: Obx(() => Text(
-                                    controller.userModel.value.phoneW,
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.w500))),
-                                leading: Icon(
-                                  Icons.contact_phone,
-                                  color: Colors.blue[500],
-                                ),
-                              ),
-                              ListTile(
-                                title: Obx(() =>
-                                    Text(controller.userModel.value.emailU)),
-                                leading: Icon(
-                                  Icons.contact_mail,
-                                  color: Colors.blue[500],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+          child: Column(
+            children: [
+              FutureBuilder<UserModel>(
+                  future: controller.fetchApi(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    if (snapshot.hasData) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          ElevatedButton(
-                              onPressed: () {
-                                controller.fetchApi();
-                              },
-                              child: const Text('Get new')),
+                          const UserAvatarWidget(),
+                          UserInfoCardWidget(controller: controller),
+                          GetNewButtonWidget(controller: controller),
                         ],
-                      ),
-                      const PagesButtons()
-                    ],
-                  );
-                } else if (snapshot.hasError) {
-                  return Column(children: [
-                    const Icon(
-                      Icons.error_outline,
-                      color: Colors.red,
-                      size: 60,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16),
-                      child: Text('Error: ${snapshot.error}'),
-                    )
-                  ]);
-                } else {
-                  return Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Center(
-                          child: SizedBox(
-                            child: CircularProgressIndicator(),
-                            width: 60,
-                            height: 60,
-                          ),
-                        ),
-                        Center(
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 16),
-                            child: Text('Awaiting result...'),
-                          ),
-                        )
-                      ]);
-                }
-              }),
+                      );
+                    } else if (snapshot.hasError) {
+                      return InfoErrorWidget(error: snapshot.error);
+                    } else {
+                      return const LoadingWidget();
+                    }
+                  }),
+              const PagesButtons()
+            ],
+          ),
         ));
   }
 }

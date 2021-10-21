@@ -4,7 +4,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:logging/logging.dart';
 
 import '../data/models/login_model.dart';
-import '../routes/app_pages.dart';
 
 class LoginController extends GetxController {
   final log = Logger('LoginController');
@@ -22,8 +21,8 @@ class LoginController extends GetxController {
     super.onInit();
   }
 
-  void saveLogin(LoginModel lm) async {
-    loginModel.value = lm;
+  void saveLogin(String email, String password) async {
+    loginModel.value = LoginModel(email: email, password: password);
     loginBox.put("userLogin", loginModel.value);
     if (registred.value == false) {
       registred.value = true;

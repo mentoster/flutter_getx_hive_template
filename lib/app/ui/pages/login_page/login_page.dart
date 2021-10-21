@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:logging/logging.dart';
 
 import '../../../controllers/login_controller.dart';
-import '../../../data/models/login_model.dart';
 import '../../global_widgets/pages_buttons.dart';
 import '../../theme/app_constants.dart';
 
@@ -18,27 +17,29 @@ class LoginPage extends GetView<LoginController> {
         ),
         body: SafeArea(
           minimum: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Obx(() => controller.registred.value == true
-                  ? Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text("You already in servise!"),
-                        Text("Email: ${controller.loginModel.value.email}"),
-                        Text(
-                            "Password: ${controller.loginModel.value.password}"),
-                      ],
-                    )
-                  : Container()),
-              _SignInForm(),
-              controller.registred.value == true
-                  ? const PagesButtons()
-                  : const SizedBox(),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Obx(() => controller.registred.value == true
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text("You already in registered in app!"),
+                          Text("Email: ${controller.loginModel.value.email}"),
+                          Text(
+                              "Password: ${controller.loginModel.value.password}"),
+                        ],
+                      )
+                    : Container()),
+                _SignInForm(),
+                controller.registred.value == true
+                    ? const PagesButtons()
+                    : const SizedBox(),
+              ],
+            ),
           ),
         ));
   }
@@ -124,9 +125,8 @@ class __SignInFormState extends State<_SignInForm> {
 
   _onLoginButtonPressed() {
     if (widget._key.currentState!.validate()) {
-      widget._controller.saveLogin(LoginModel(
-          email: widget._emailController.text,
-          password: widget._passwordController.text));
+      widget._controller.saveLogin(
+          widget._emailController.text, widget._passwordController.text);
     } else {
       setState(() {
         _autoValidate = true;
