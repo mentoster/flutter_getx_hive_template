@@ -12,7 +12,6 @@ class ChangethemeWidget extends StatefulWidget {
 }
 
 class _ChangethemeWidgetState extends State<ChangethemeWidget> {
-  final _isDarkTheme = GetStorage().read("isDarkTheme");
   Map<bool?, List<bool>> isSelectedMap = {
     null: <bool>[true, false, false],
     true: <bool>[false, true, false],
@@ -20,7 +19,7 @@ class _ChangethemeWidgetState extends State<ChangethemeWidget> {
   };
   @override
   Widget build(BuildContext context) {
-    var isSelected = isSelectedMap[_isDarkTheme];
+    var isSelected = isSelectedMap[widget._appSettingService.getThemeNow()];
     return Padding(
       padding: const EdgeInsets.all(defaultPadding),
       child: Row(

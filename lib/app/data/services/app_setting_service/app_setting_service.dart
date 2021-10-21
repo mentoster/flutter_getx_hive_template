@@ -28,4 +28,8 @@ class AppSettingService extends GetxService {
       getBox.write("isDarkTheme", false);
     }
   }
+
+  bool? getThemeNow() {
+    return getBox.read("isDarkTheme");
+  }
 }
