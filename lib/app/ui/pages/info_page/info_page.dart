@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../controllers/info_controller.dart';
 import '../../../data/models/user_model.dart';
 import '../../global_widgets/pages_buttons.dart';
+import 'widgets/change_theme_widget.dart';
 import 'widgets/error_widget.dart';
 import 'widgets/get_new_button_widget.dart';
 import 'widgets/loading_widget.dart';
@@ -51,7 +52,8 @@ class InfoPage extends GetView<InfoController> {
                       return const LoadingWidget();
                     }
                   }),
-              const PagesButtons()
+              const ChangethemeWidget(),
+              const PagesButtons(),
             ],
           ),
         ));
