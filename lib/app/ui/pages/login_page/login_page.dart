@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:logging/logging.dart';
 
 import '../../../controllers/login_controller.dart';
-import '../../global_widgets/pages_buttons.dart';
 import '../../theme/app_constants.dart';
 
 class LoginPage extends GetView<LoginController> {
@@ -35,9 +34,6 @@ class LoginPage extends GetView<LoginController> {
                       )
                     : Container()),
                 _SignInForm(),
-                controller.registered.value == true
-                    ? const PagesButtons()
-                    : const SizedBox(),
               ],
             ),
           ),

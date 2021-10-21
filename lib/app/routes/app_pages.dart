@@ -13,13 +13,5 @@ abstract class AppPages {
   static final pages = [
     GetPage(
         name: Routes.INITIAL, page: () => RootPage(), binding: RootBinding()),
-    GetPage(
-        name: Routes.INFO,
-        page: () => const InfoPage(),
-        binding: InfoBinding()),
-    GetPage(
-        name: Routes.LOGIN,
-        page: () => const LoginPage(),
-        binding: LoginBinding()),
   ];
 }

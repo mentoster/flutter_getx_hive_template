@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../global_widgets/pages_buttons.dart';
 import '../../theme/app_text_theme.dart';
 import 'package:get/get.dart';
 
@@ -12,16 +11,8 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  "Counter page",
-                ),
-                IconButton(
-                    onPressed: controller.toUserInfo,
-                    icon: const Icon(Icons.account_circle_outlined))
-              ],
+            title: const Text(
+              "Counter page",
             ),
             automaticallyImplyLeading: false),
         body: SafeArea(
@@ -30,7 +21,6 @@ class HomePage extends GetView<HomeController> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Obx(() => Text("${controller.count.value}", style: headline1)),
-                const PagesButtons()
               ],
             ),
           ),

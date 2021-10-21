@@ -22,5 +22,4 @@ class InfoController extends GetxController {
   }
 
   getNewUserInfo() => fetchApi();
-  toCounter() => Get.toNamed(Routes.INITIAL);
 }

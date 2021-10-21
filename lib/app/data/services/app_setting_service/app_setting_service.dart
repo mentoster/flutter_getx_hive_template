@@ -18,14 +18,14 @@ class AppSettingService extends GetxService {
       var brightness = SchedulerBinding.instance!.window.platformBrightness;
       bool isDarkMode = brightness == Brightness.dark;
       isDarkMode
-          ? Get.changeTheme(appThemeDataDark)
-          : Get.changeTheme(appThemeDataLight);
+          ? Get.changeTheme(Themes.appThemeDataDark)
+          : Get.changeTheme(Themes.appThemeDataLight);
       getBox.write("isDarkTheme", null);
     } else if (isDarkTheme == true) {
-      Get.changeTheme(appThemeDataDark);
+      Get.changeTheme(Themes.appThemeDataDark);
       getBox.write("isDarkTheme", true);
     } else if (isDarkTheme == false) {
-      Get.changeTheme(appThemeDataLight);
+      Get.changeTheme(Themes.appThemeDataLight);
       getBox.write("isDarkTheme", false);
     }
   }
