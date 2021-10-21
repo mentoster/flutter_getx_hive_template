@@ -17,9 +17,10 @@ class _ChangethemeWidgetState extends State<ChangethemeWidget> {
     true: <bool>[false, true, false],
     false: <bool>[false, false, true],
   };
+  bool? whatSelected = GetStorage().read("isDarkTheme");
   @override
   Widget build(BuildContext context) {
-    var isSelected = isSelectedMap[widget._appSettingService.getThemeNow()];
+    var isSelected = isSelectedMap[whatSelected];
     return Padding(
       padding: const EdgeInsets.all(defaultPadding),
       child: Row(
@@ -36,7 +37,7 @@ class _ChangethemeWidgetState extends State<ChangethemeWidget> {
             ],
             onPressed: (int index) {
               setState(() {
-                // chage buttons visually
+                // change buttons visually
                 for (int buttonIndex = 0;
                     buttonIndex < isSelected!.length;
                     buttonIndex++) {
@@ -46,15 +47,15 @@ class _ChangethemeWidgetState extends State<ChangethemeWidget> {
                     isSelected[buttonIndex] = false;
                   }
                 }
-                // change theme
-                if (index == 0) {
-                  widget._appSettingService.setStartTheme(null);
-                } else if (index == 1) {
-                  widget._appSettingService.setStartTheme(true);
-                } else if (index == 2) {
-                  widget._appSettingService.setStartTheme(false);
-                }
               });
+              // change theme
+              if (index == 0) {
+                widget._appSettingService.setStartTheme(null);
+              } else if (index == 1) {
+                widget._appSettingService.setStartTheme(true);
+              } else if (index == 2) {
+                widget._appSettingService.setStartTheme(false);
+              }
             },
             isSelected: isSelected!,
           ),
