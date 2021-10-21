@@ -1,10 +1,9 @@
-import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:logging/logging.dart';
 
-class HiveDb extends GetxService {
+class HiveService {
   final log = Logger('HiveDB');
-  Future<HiveDb> init() async {
+  Future<HiveService> init() async {
     await Hive.initFlutter();
     return this;
   }

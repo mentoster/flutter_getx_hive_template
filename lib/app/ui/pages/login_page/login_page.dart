@@ -22,7 +22,7 @@ class LoginPage extends GetView<LoginController> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Obx(() => controller.registred.value == true
+                Obx(() => controller.registered.value == true
                     ? Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +35,7 @@ class LoginPage extends GetView<LoginController> {
                       )
                     : Container()),
                 _SignInForm(),
-                controller.registred.value == true
+                controller.registered.value == true
                     ? const PagesButtons()
                     : const SizedBox(),
               ],

@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:logging/logging.dart';
 
 class RootController extends GetxController {
   var registred = false.obs;
   bool? nullRegistred;
+  final appSettingsBox = GetStorage();
+  final log = Logger('RootController');
   @override
   void onInit() {
     checkRegistry();
@@ -12,11 +14,11 @@ class RootController extends GetxController {
   }
 
   checkRegistry() async {
-    var appSettinsBox = await Hive.openBox('appSettingsBox');
-    bool? resultLogin = appSettinsBox.get('registred');
+    bool? resultLogin = appSettingsBox.read("registered");
     if (resultLogin == null) {
       registred.value = false;
       nullRegistred = true;
+      log.info('Not registered yet! Go to login page...');
     } else {
       registred.value = resultLogin;
     }

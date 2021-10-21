@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_hive_template/app/data/services/app_setting_service/app_setting_service.dart';
 import 'package:flutter_getx_hive_template/app/ui/theme/app_constants.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class ChangethemeWidget extends StatefulWidget {
-  const ChangethemeWidget({Key? key}) : super(key: key);
-
+  ChangethemeWidget({Key? key}) : super(key: key);
+  final AppSettingService _appSettingService = Get.find();
   @override
   State<ChangethemeWidget> createState() => _ChangethemeWidgetState();
 }
 
 class _ChangethemeWidgetState extends State<ChangethemeWidget> {
-  var isSelected = <bool>[true, false, false];
+  final _isDarkTheme = GetStorage().read("isDarkTheme");
+  Map<bool?, List<bool>> isSelectedMap = {
+    null: <bool>[true, false, false],
+    true: <bool>[false, true, false],
+    false: <bool>[false, false, true],
+  };
   @override
   Widget build(BuildContext context) {
+    var isSelected = isSelectedMap[_isDarkTheme];
     return Padding(
       padding: const EdgeInsets.all(defaultPadding),
       child: Row(
@@ -31,7 +39,7 @@ class _ChangethemeWidgetState extends State<ChangethemeWidget> {
               setState(() {
                 // chage buttons visually
                 for (int buttonIndex = 0;
-                    buttonIndex < isSelected.length;
+                    buttonIndex < isSelected!.length;
                     buttonIndex++) {
                   if (buttonIndex == index) {
                     isSelected[buttonIndex] = true;
@@ -41,19 +49,15 @@ class _ChangethemeWidgetState extends State<ChangethemeWidget> {
                 }
                 // change theme
                 if (index == 0) {
-                  var brightness = MediaQuery.of(context).platformBrightness;
-                  bool isDarkMode = brightness == Brightness.dark;
-                  isDarkMode
-                      ? Get.changeTheme(ThemeData.dark())
-                      : Get.changeTheme(ThemeData.light());
+                  widget._appSettingService.setStartTheme(null);
                 } else if (index == 1) {
-                  Get.changeTheme(ThemeData.dark());
+                  widget._appSettingService.setStartTheme(true);
                 } else if (index == 2) {
-                  Get.changeTheme(ThemeData.light());
+                  widget._appSettingService.setStartTheme(false);
                 }
               });
             },
-            isSelected: isSelected,
+            isSelected: isSelected!,
           ),
         ],
       ),

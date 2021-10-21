@@ -14,6 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   get: null
+  get_storage:
   get_cli: null
   logging: ^1.0.2
   flutter_native_splash: ^1.2.4
