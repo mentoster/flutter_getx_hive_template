@@ -9,8 +9,8 @@ void main() async {
 
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    theme: Themes.appThemeDataLight,
-    darkTheme: Themes.appThemeDataDark,
+    theme: Themes.light,
+    darkTheme: Themes.dark,
     themeMode: ThemeMode.system,
     locale: Get.deviceLocale,
     defaultTransition: Transition.rightToLeft,
