@@ -51,7 +51,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-To run test in project, 
+To run all test in project, use command  "Dart: Run All Test"
 
 ### Break down into end to end tests
 
