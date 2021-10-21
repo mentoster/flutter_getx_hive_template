@@ -38,37 +38,20 @@ Write about 1-2 paragraphs describing the purpose of your project.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+This project is a starting point for a Flutter application.
 
-### Prerequisites
+A few resources to get you started if this is your first Flutter project:
 
-What things you need to install the software and how to install them.
+* [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+* [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials, 
+samples, guidance on mobile development, and a full API reference.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-Explain how to run the automated tests for this system.
+To run test in project, 
 
 ### Break down into end to end tests
 
@@ -98,8 +81,10 @@ Add additional notes about how to deploy this on a live system.
 
 * [Flutter](https://flutter.dev/) - Flutter is Google's UI toolkit for building beautiful, natively compiled applications for mobile, web, desktop, and embedded devices from a single codebase.
 * [Getx](https://github.com/jonataslaw/getx) - GetX is an extra-light and powerful solution for Flutter.
-* [Hive](https://pub.flutter-io.cn/packages/hive) -Hive is a lightweight and blazing fast key-value database written in pure Dart.
+* [get_storage ](https://pub.dev/packages/get_storage) - A fast, extra light and synchronous key-value in memory, which backs up data to disk at each operation.
+* [Hive](https://pub.flutter-io.cn/packages/hive) - Hive is a lightweight and blazing fast key-value database written in pure Dart.
 * [flutter_native_splash ](https://pub.dev/packages/flutter_native_splash) - This package automatically generates iOS, Android, and Web-native code for customizing this native splash screen background color and splash image. Supports dark mode, full screen, and platform-specific options.
+
 ## ✍️ Authors <a name = "authors"></a>
 
 * [@mentoster](https://github.com/mentoster) - Idea & Initial work
