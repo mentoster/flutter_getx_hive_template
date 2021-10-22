@@ -12,42 +12,6 @@ class AppSettingService extends GetxService {
   final getBox = GetStorage();
   final log = Logger('AppSettingService');
   Future<AppSettingService> init() async {
-    setStartTheme(getBox.read("isDarkTheme"));
     return this;
-  }
-
-  void setStartTheme(bool? isDarkTheme) {
-    if (isDarkTheme == null) {
-      var brightness = SchedulerBinding.instance!.window.platformBrightness;
-      bool isDarkMode = brightness == Brightness.dark;
-      isDarkMode ? Get.changeTheme(Themes.dark) : Get.changeTheme(Themes.light);
-      getBox.write("isDarkTheme", null);
-      changeStatusBarColor(isDarkMode);
-    } else if (isDarkTheme == true) {
-      Get.changeTheme(Themes.dark);
-      getBox.write("isDarkTheme", true);
-      changeStatusBarColor(true);
-    } else if (isDarkTheme == false) {
-      Get.changeTheme(Themes.light);
-      getBox.write("isDarkTheme", false);
-      changeStatusBarColor(false);
-    }
-  }
-
-  bool? getThemeNow() {
-    return getBox.read("isDarkTheme");
-  }
-
-  void changeStatusBarColor(bool toDark) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: toDark
-          ? Themes.dark.appBarTheme.backgroundColor
-          : Themes.light.appBarTheme.backgroundColor,
-      statusBarIconBrightness: toDark ? Brightness.light : Brightness.dark,
-      systemNavigationBarColor: toDark
-          ? Themes.dark.bottomNavigationBarTheme.backgroundColor
-          : Themes.light.bottomNavigationBarTheme.backgroundColor,
-      systemNavigationBarDividerColor: Colors.transparent,
-    ));
   }
 }

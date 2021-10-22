@@ -11,7 +11,7 @@ class RootPage extends GetView<RootController> {
   final log = Logger('RootPage');
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Obx(() {
+    return Obx(() {
       if (controller.registred.value == false &&
           controller.nullRegistred != null) {
         return const LoginPage();
@@ -20,6 +20,6 @@ class RootPage extends GetView<RootController> {
       } else {
         return Container();
       }
-    }));
+    });
   }
 }

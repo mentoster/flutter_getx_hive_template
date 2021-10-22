@@ -8,53 +8,32 @@ import '../../../controllers/bottomnavbar_controller.dart';
 
 class BottomnavbarPage extends StatelessWidget {
   const BottomnavbarPage({Key? key}) : super(key: key);
-
+  final List<Widget> _tabs = const [HomePage(), LoginPage(), InfoPage()];
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BottomnavbarController>(
       builder: (controller) {
-        return Scaffold(
-          body: SafeArea(
-            child: IndexedStack(
-              index: controller.tabIndex,
-              children: const [
-                HomePage(),
-                LoginPage(),
-                InfoPage(),
-              ],
-            ),
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            onTap: controller.changeTabIndex,
-            currentIndex: controller.tabIndex,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            type: BottomNavigationBarType.fixed,
-            elevation: 0,
-            items: [
-              _bottomNavigationBarItem(
-                icon: Icons.home,
-                label: 'Home',
-              ),
-              _bottomNavigationBarItem(
-                icon: Icons.login,
-                label: 'News',
-              ),
-              _bottomNavigationBarItem(
-                icon: Icons.person,
-                label: 'Account',
-              ),
-            ],
+        return CupertinoPageScaffold(
+          child: SafeArea(
+            child: CupertinoTabScaffold(
+                tabBar: CupertinoTabBar(
+                  items: const [
+                    BottomNavigationBarItem(
+                        icon: Icon(CupertinoIcons.home), label: 'Home'),
+                    BottomNavigationBarItem(
+                        icon: Icon(CupertinoIcons.settings_solid),
+                        label: 'Settings'),
+                    BottomNavigationBarItem(
+                        icon: Icon(CupertinoIcons.profile_circled),
+                        label: 'Settings')
+                  ],
+                ),
+                tabBuilder: (BuildContext context, index) {
+                  return _tabs[index];
+                }),
           ),
         );
       },
-    );
-  }
-
-  _bottomNavigationBarItem({required IconData icon, required String label}) {
-    return BottomNavigationBarItem(
-      icon: Icon(icon),
-      label: label,
     );
   }
 }

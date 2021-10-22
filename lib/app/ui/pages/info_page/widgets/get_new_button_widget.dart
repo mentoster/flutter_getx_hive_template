@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_hive_template/app/controllers/info_controller.dart';
 
@@ -14,7 +15,7 @@ class GetNewButtonWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ElevatedButton(
+        CupertinoButton.filled(
             onPressed: () {
               controller.fetchApi();
             },

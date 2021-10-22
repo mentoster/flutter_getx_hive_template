@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,13 +16,11 @@ class InfoPage extends GetView<InfoController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "Info page",
-          ),
+    return CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(
+          middle: Text('Info page'),
         ),
-        body: SafeArea(
+        child: SafeArea(
           child: Column(
             children: [
               FutureBuilder<UserModel>(

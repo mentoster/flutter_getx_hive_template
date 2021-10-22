@@ -7,11 +7,9 @@ import 'app/ui/theme/app_theme.dart';
 void main() async {
   await initServices();
 
-  runApp(GetMaterialApp(
+  runApp(GetCupertinoApp(
     debugShowCheckedModeBanner: false,
-    theme: Themes.light,
-    darkTheme: Themes.dark,
-    themeMode: ThemeMode.system,
+    theme: Themes.theme,
     locale: Get.deviceLocale,
     defaultTransition: Transition.rightToLeft,
     getPages: AppPages.pages,

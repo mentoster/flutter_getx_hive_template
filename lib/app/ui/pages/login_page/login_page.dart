@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:logging/logging.dart';
@@ -10,11 +11,11 @@ class LoginPage extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Login'),
+    return CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(
+          middle: Text('Login page'),
         ),
-        body: SafeArea(
+        child: SafeArea(
           minimum: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: Column(
@@ -67,47 +68,22 @@ class __SignInFormState extends State<_SignInForm> {
             const SizedBox(
               height: defaultPadding,
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Email address',
-                filled: true,
-                isDense: true,
-              ),
+            CupertinoTextField(
               controller: widget._emailController,
               keyboardType: TextInputType.emailAddress,
               autocorrect: false,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Email is required.';
-                }
-                if (!value.isEmail) {
-                  return 'Not email';
-                }
-                return null;
-              },
             ),
             const SizedBox(
               height: 12,
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Password',
-                filled: true,
-                isDense: true,
-              ),
+            CupertinoTextField(
               obscureText: true,
               controller: widget._passwordController,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Password is required.';
-                }
-                return null;
-              },
             ),
             const SizedBox(
               height: 16,
             ),
-            ElevatedButton(
+            CupertinoButton.filled(
                 onPressed: _onLoginButtonPressed,
                 child: const Text('Registration')),
             const SizedBox(
