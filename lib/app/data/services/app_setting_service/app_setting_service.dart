@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_getx_hive_template/app/ui/theme/app_theme.dart';
 import 'package:get/get.dart';
@@ -12,6 +11,17 @@ class AppSettingService extends GetxService {
   final getBox = GetStorage();
   final log = Logger('AppSettingService');
   Future<AppSettingService> init() async {
+    changeStatusBarColor();
     return this;
+  }
+
+  void changeStatusBarColor() {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Themes.theme.barBackgroundColor,
+      statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarColor: Themes.theme.barBackgroundColor,
+      systemNavigationBarDividerColor: Colors.transparent,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ));
   }
 }
