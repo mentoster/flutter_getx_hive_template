@@ -15,12 +15,11 @@ class LoginPage extends GetView<LoginController> {
         navigationBar: const CupertinoNavigationBar(
           middle: Text('Login page'),
         ),
+        // resizeToAvoidBottomInset: true,
         child: SafeArea(
-          minimum: const EdgeInsets.all(16),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+          child: Padding(
+            padding: const EdgeInsets.all(defaultPadding),
+            child: ListView(
               children: [
                 Obx(() => controller.registered.value == true
                     ? Column(
@@ -61,36 +60,31 @@ class __SignInFormState extends State<_SignInForm> {
       key: widget._key,
       autovalidateMode:
           _autoValidate ? AutovalidateMode.always : AutovalidateMode.disabled,
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            const SizedBox(
-              height: defaultPadding,
-            ),
-            CupertinoTextField(
-              controller: widget._emailController,
-              keyboardType: TextInputType.emailAddress,
-              autocorrect: false,
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            CupertinoTextField(
-              obscureText: true,
-              controller: widget._passwordController,
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            CupertinoButton.filled(
-                onPressed: _onLoginButtonPressed,
-                child: const Text('Registration')),
-            const SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          const SizedBox(
+            height: defaultPadding,
+          ),
+          CupertinoTextField(
+            controller: widget._emailController,
+            keyboardType: TextInputType.emailAddress,
+            autocorrect: false,
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          CupertinoTextField(
+            obscureText: true,
+            controller: widget._passwordController,
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          CupertinoButton.filled(
+              onPressed: _onLoginButtonPressed,
+              child: const Text('Registration')),
+        ],
       ),
     );
   }

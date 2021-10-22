@@ -13,26 +13,25 @@ class BottomnavbarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<BottomnavbarController>(
       builder: (controller) {
-        return CupertinoPageScaffold(
-          child: SafeArea(
-            child: CupertinoTabScaffold(
-                tabBar: CupertinoTabBar(
-                  items: const [
-                    BottomNavigationBarItem(
-                        icon: Icon(CupertinoIcons.home), label: 'Home'),
-                    BottomNavigationBarItem(
-                        icon: Icon(CupertinoIcons.settings_solid),
-                        label: 'Settings'),
-                    BottomNavigationBarItem(
-                        icon: Icon(CupertinoIcons.profile_circled),
-                        label: 'Settings')
-                  ],
-                ),
-                tabBuilder: (BuildContext context, index) {
-                  return _tabs[index];
-                }),
-          ),
-        );
+        return CupertinoTabScaffold(
+            tabBar: CupertinoTabBar(
+              backgroundColor: CupertinoTheme.of(context)
+                  .barBackgroundColor
+                  .withOpacity(1.0),
+              items: const [
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.home), label: 'Home'),
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.settings_solid),
+                    label: 'Settings'),
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.profile_circled),
+                    label: 'Profile')
+              ],
+            ),
+            tabBuilder: (BuildContext context, index) {
+              return _tabs[index];
+            });
       },
     );
   }

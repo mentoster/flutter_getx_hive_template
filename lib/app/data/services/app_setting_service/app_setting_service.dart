@@ -20,7 +20,7 @@ class AppSettingService extends GetxService {
       statusBarColor: Themes.theme.barBackgroundColor,
       statusBarIconBrightness: Brightness.dark,
       systemNavigationBarColor: Themes.theme.barBackgroundColor,
-      systemNavigationBarDividerColor: Colors.transparent,
+      systemNavigationBarDividerColor: Themes.theme.barBackgroundColor,
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
   }
