@@ -40,14 +40,15 @@ class AppSettingService extends GetxService {
 
   void changeStatusBarColor(bool toDark) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: toDark
-          ? Themes.dark.appBarTheme.backgroundColor
-          : Themes.light.appBarTheme.backgroundColor,
-      statusBarIconBrightness: toDark ? Brightness.light : Brightness.dark,
-      systemNavigationBarColor: toDark
-          ? Themes.dark.bottomNavigationBarTheme.backgroundColor
-          : Themes.light.bottomNavigationBarTheme.backgroundColor,
-      systemNavigationBarDividerColor: Colors.transparent,
-    ));
+        statusBarColor: toDark
+            ? Themes.dark.appBarTheme.backgroundColor
+            : Themes.light.appBarTheme.backgroundColor,
+        statusBarIconBrightness: toDark ? Brightness.dark : Brightness.light,
+        systemNavigationBarColor: toDark
+            ? Themes.dark.bottomNavigationBarTheme.backgroundColor
+            : Themes.light.bottomNavigationBarTheme.backgroundColor,
+        systemNavigationBarDividerColor: Colors.transparent,
+        systemNavigationBarIconBrightness:
+            toDark ? Brightness.light : Brightness.dark));
   }
 }
