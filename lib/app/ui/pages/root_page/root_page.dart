@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_hive_template/app/ui/pages/bottomnavbar_page/bottomnavbar_page.dart';
-import 'package:flutter_getx_hive_template/app/ui/pages/home_page/home_page.dart';
 import 'package:flutter_getx_hive_template/app/ui/pages/login_page/login_page.dart';
 import 'package:get/get.dart';
 import 'package:logging/logging.dart';
@@ -16,7 +15,7 @@ class RootPage extends GetView<RootController> {
           controller.nullRegistred != null) {
         return const LoginPage();
       } else if (controller.registred.value == true) {
-        return BottomnavbarPage();
+        return const BottomnavbarPage();
       } else {
         return Container();
       }

@@ -26,5 +26,5 @@ abstract class Themes {
       ),
       appBarTheme: AppBarTheme(backgroundColor: Colors.grey[800]),
       bottomNavigationBarTheme:
-          BottomNavigationBarThemeData(backgroundColor: Color(0xff2e2e2e)));
+          const BottomNavigationBarThemeData(backgroundColor: Color(0xff2e2e2e)));
 }

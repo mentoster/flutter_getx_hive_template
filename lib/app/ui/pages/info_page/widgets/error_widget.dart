@@ -17,7 +17,7 @@ class InfoErrorWidget extends StatelessWidget {
       ),
       Padding(
         padding: const EdgeInsets.only(top: 16),
-        child: Text('Error: ${error}'),
+        child: Text('Error: $error'),
       )
     ]);
   }

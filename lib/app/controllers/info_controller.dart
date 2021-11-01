@@ -1,6 +1,5 @@
 import '../data/models/user_model.dart';
 import '../data/services/fake_api_service/fake_api_repository.dart';
-import '../routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:logging/logging.dart';
 
