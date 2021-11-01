@@ -14,15 +14,13 @@ class BottomnavbarPage extends StatelessWidget {
     return GetBuilder<BottomnavbarController>(
       builder: (controller) {
         return Scaffold(
-          body: SafeArea(
-            child: IndexedStack(
-              index: controller.tabIndex,
-              children: const [
-                HomePage(),
-                LoginPage(),
-                InfoPage(),
-              ],
-            ),
+          body: IndexedStack(
+            index: controller.tabIndex,
+            children: const [
+              HomePage(),
+              LoginPage(),
+              InfoPage(),
+            ],
           ),
           bottomNavigationBar: BottomNavigationBar(
             onTap: controller.changeTabIndex,
