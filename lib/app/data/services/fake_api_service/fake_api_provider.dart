@@ -7,7 +7,7 @@ import '../../models/models_generated/user_generated.dart';
 
 const baseUrl = "https://api.namefake.com/";
 
-class FakeUserApi extends GetConnect {
+class FakeUserProvider extends GetConnect {
   final log = Logger('Api');
   getUser() async {
     try {
