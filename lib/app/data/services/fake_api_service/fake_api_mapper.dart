@@ -6,8 +6,14 @@ import 'package:logging/logging.dart';
 
 import '../../models/models_generated/user_generated.dart';
 
-UserModel fakeUserMapper(UserGenerated userGenerated) {
-  UserModel userModel = UserModel(userGenerated.name!,
-      userGenerated.maidenName!, userGenerated.phoneW!, userGenerated.emailU!);
-  return userModel;
+
+class FakeApiMapper {
+  static UserModel fromApi(UserGenerated userGenerated) {
+    UserModel userModel = UserModel(
+        userGenerated.name!,
+        userGenerated.maidenName!,
+        userGenerated.phoneW!,
+        userGenerated.emailU!);
+    return userModel;
+  }
 }

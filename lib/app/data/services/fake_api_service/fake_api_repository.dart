@@ -10,6 +10,6 @@ class FakeUserRepository {
   final log = Logger('FakeUser repository');
   Future<UserModel> getUser() async {
     UserGenerated userG = await api.getUser()!;
-    return fakeUserMapper(userG);
+    return FakeApiMapper.fromApi(userG);
   }
 }
