@@ -10,7 +10,7 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/mentoster/flutter_getx_hive_template.svg)](https://github.com/mentoster/flutter_getx_hive_template/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/mentoster/flutter_getx_hive_template.svg)](https://github.com/mentoster/flutter_getx_hive_template/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
 
 </div>
 
