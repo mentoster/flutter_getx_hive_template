@@ -33,8 +33,8 @@ class _SignInFormState extends State<SignInForm> {
               height: defaultPadding,
             ),
             TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Email address',
+              decoration: InputDecoration(
+                labelText: 'Email address'.tr,
                 filled: true,
                 isDense: true,
               ),
@@ -43,10 +43,10 @@ class _SignInFormState extends State<SignInForm> {
               autocorrect: false,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Email is required.';
+                  return 'Email is required.'.tr;
                 }
                 if (!value.isEmail) {
-                  return 'Not email';
+                  return 'Not email'.tr;
                 }
                 return null;
               },
@@ -55,8 +55,8 @@ class _SignInFormState extends State<SignInForm> {
               height: 12,
             ),
             TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Password',
+              decoration: InputDecoration(
+                labelText: 'Password'.tr,
                 filled: true,
                 isDense: true,
               ),
@@ -64,7 +64,7 @@ class _SignInFormState extends State<SignInForm> {
               controller: widget._passwordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Password is required.';
+                  return 'Password is required.'.tr;
                 }
                 return null;
               },
@@ -74,7 +74,7 @@ class _SignInFormState extends State<SignInForm> {
             ),
             ElevatedButton(
                 onPressed: _onLoginButtonPressed,
-                child: const Text('Registration')),
+                child: Text('Registration'.tr)),
             const SizedBox(
               height: 20,
             ),

@@ -8,34 +8,37 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:logging/logging.dart';
 
-class AppSettingService extends GetxService {
+const saveThemeCode = "isDarkTheme";
+
+class AppThemeService extends GetxService {
   final getBox = GetStorage();
   final log = Logger('AppSettingService');
-  Future<AppSettingService> init() async {
-    setStartTheme(getBox.read("isDarkTheme"));
+
+  Future<AppThemeService> init() async {
+    setTheme(getThemeNow());
     return this;
   }
 
-  void setStartTheme(bool? isDarkTheme) {
+  void setTheme(bool? isDarkTheme) {
     if (isDarkTheme == null) {
       var brightness = SchedulerBinding.instance!.window.platformBrightness;
       bool isDarkMode = brightness == Brightness.dark;
       isDarkMode ? Get.changeTheme(Themes.dark) : Get.changeTheme(Themes.light);
-      getBox.write("isDarkTheme", null);
+      getBox.write(saveThemeCode, null);
       changeStatusBarColor(isDarkMode);
     } else if (isDarkTheme == true) {
       Get.changeTheme(Themes.dark);
-      getBox.write("isDarkTheme", true);
+      getBox.write(saveThemeCode, true);
       changeStatusBarColor(true);
     } else if (isDarkTheme == false) {
       Get.changeTheme(Themes.light);
-      getBox.write("isDarkTheme", false);
+      getBox.write(saveThemeCode, false);
       changeStatusBarColor(false);
     }
   }
 
-  bool? getThemeNow() {
-    return getBox.read("isDarkTheme");
+  static bool? getThemeNow() {
+    return GetStorage().read(saveThemeCode);
   }
 
   void changeStatusBarColor(bool toDark) {

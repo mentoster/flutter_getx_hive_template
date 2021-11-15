@@ -11,8 +11,8 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Text(
-              "Counter page",
+            title: Text(
+              "Counter page".tr,
             ),
             automaticallyImplyLeading: false),
         body: SafeArea(
