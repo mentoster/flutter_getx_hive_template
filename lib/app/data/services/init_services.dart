@@ -15,6 +15,7 @@ Future<void> initServices() async {
   // init hive
   await Get.putAsync(() => HiveService().init());
   await Get.putAsync(() => GetxStorageService().init());
+  await Get.putAsync(() => AppThemeService().init());
 
   // init hive classes
   registerAdapters();

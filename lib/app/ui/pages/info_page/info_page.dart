@@ -52,8 +52,8 @@ class InfoPage extends GetView<InfoController> {
                         return const LoadingWidget();
                       }
                     }),
-                const ChangethemeWidget(),
-                const ChangeLocaleWidget(),
+                ChangethemeWidget(),
+                 ChangeLocaleWidget(),
               ],
             ),
           ),

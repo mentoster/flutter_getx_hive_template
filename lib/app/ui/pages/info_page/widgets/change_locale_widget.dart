@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_hive_template/app/data/services/app_setting_services/app_language_service.dart';
 import 'package:flutter_getx_hive_template/app/translation/languages_names.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 class ChangeLocaleWidget extends StatefulWidget {
-  const ChangeLocaleWidget({Key? key}) : super(key: key);
+  ChangeLocaleWidget({Key? key}) : super(key: key);
+  final AppLanguageService _appLanguageService = AppLanguageService();
 
   @override
   State<ChangeLocaleWidget> createState() => _ChangeLocaleWidgetState();
@@ -14,9 +15,13 @@ class _ChangeLocaleWidgetState extends State<ChangeLocaleWidget> {
   String dropdownValue = 'English';
   @override
   void initState() {
-    // String? savedLanguage = GetStorage().read("isDarkTheme");
-    dropdownValue =
-        LanguagesNames.getCountryNameForCode(Get.deviceLocale!.languageCode);
+    String? savedLanguage = AppLanguageService.getLocaleNow();
+    if (savedLanguage != null) {
+      dropdownValue = savedLanguage;
+    } else {
+      dropdownValue =
+          LanguagesNames.getCountryNameForCode(Get.deviceLocale!.languageCode);
+    }
     super.initState();
   }
 
@@ -37,8 +42,7 @@ class _ChangeLocaleWidgetState extends State<ChangeLocaleWidget> {
           onChanged: (String? newValue) {
             setState(() {
               dropdownValue = newValue!;
-              Get.updateLocale(
-                  Locale(LanguagesNames.getCodeForCountryName(newValue)));
+              widget._appLanguageService.setLanguage(newValue);
             });
           },
           items: LanguagesNames.countryNames

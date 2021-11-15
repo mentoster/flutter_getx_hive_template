@@ -5,7 +5,8 @@ import 'package:flutter_getx_hive_template/app/ui/theme/app_constants.dart';
 import 'package:get/get.dart';
 
 class ChangethemeWidget extends StatefulWidget {
-  const ChangethemeWidget({Key? key}) : super(key: key);
+  ChangethemeWidget({Key? key}) : super(key: key);
+  final AppThemeService _appThemeService = AppThemeService();
   @override
   State<ChangethemeWidget> createState() => _ChangethemeWidgetState();
 }
@@ -46,11 +47,11 @@ class _ChangethemeWidgetState extends State<ChangethemeWidget> {
             });
             // change theme
             if (index == 0) {
-              AppThemeService.setStartTheme(null);
+              widget._appThemeService.setTheme(null);
             } else if (index == 1) {
-              AppThemeService.setStartTheme(true);
+              widget._appThemeService.setTheme(true);
             } else if (index == 2) {
-              AppThemeService.setStartTheme(false);
+              widget._appThemeService.setTheme(false);
             }
           },
           isSelected: isSelected!,
