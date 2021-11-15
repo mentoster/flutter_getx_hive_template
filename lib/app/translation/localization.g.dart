@@ -1,5 +1,4 @@
 // ignore_for_file: equal_keys_in_map
-
 import 'package:get/get.dart';
 
 class Localization extends Translations {
@@ -23,6 +22,7 @@ class Localization extends Translations {
           'Get new': 'Get new profile',
           'Awaiting result..': 'Awaiting result..',
           'Theme': 'Theme',
+          'Language': 'Language',
         },
         'fr': {
           'Counter page': 'Pile',
@@ -42,6 +42,7 @@ class Localization extends Translations {
           'Get new': 'Obtenez de nouveau profil',
           'Awaiting result..': 'En attente du résultat ..',
           'Theme': 'Thème',
+          'Language': 'Langue',
         },
         'es': {
           'Counter page': 'Página de contador',
@@ -61,6 +62,7 @@ class Localization extends Translations {
           'Get new': 'Obtener un nuevo perfil',
           'Awaiting result..': 'En espera de resultados ..',
           'Theme': 'Tema',
+          'Language': 'Idioma',
         },
         'de': {
           'Counter page': 'Zählerseite',
@@ -80,6 +82,7 @@ class Localization extends Translations {
           'Get new': 'NEUES Profil bekommen',
           'Awaiting result..': 'Warten auf das Ergebnis ..',
           'Theme': 'Thema',
+          'Language': 'Sprache',
         },
         'hi': {
           'Counter page': 'काउंटर पेज',
@@ -99,6 +102,7 @@ class Localization extends Translations {
           'Get new': 'नई प्रोफ़ाइल प्राप्त करें',
           'Awaiting result..': 'परिणाम का इंतजार ..',
           'Theme': 'विषय',
+          'Language': 'भाषा',
         },
         'pt': {
           'Counter page': 'Contra-página',
@@ -118,6 +122,7 @@ class Localization extends Translations {
           'Get new': 'Obter novo perfil',
           'Awaiting result..': 'Aguardando resultado ..',
           'Theme': 'Tema',
+          'Language': 'Língua',
         },
         'zh': {
           'Counter page': '柜台',
@@ -136,6 +141,7 @@ class Localization extends Translations {
           'Get new': '获取新的档案',
           'Awaiting result..': '等待结果..',
           'Theme': '主题',
+          'Language': '语',
         },
         'ja': {
           'Counter page': 'カウンターページ',
@@ -154,17 +160,18 @@ class Localization extends Translations {
           'Get new': '新しいプロファイルを取得します',
           'Awaiting result..': '結果を待っています。',
           'Theme': 'テーマ',
+          'Language': '言語',
         },
         'ru': {
           'Counter page': 'Счетчик',
-          'Login': 'Авторизоваться',
+          'Login': 'Авторизация',
           'You are already registered in the app!':
               'Вы уже зарегистрированы в приложении!',
-          'Email': 'Эл. адрес',
+          'Email': 'Почта',
           'Password': 'Пароль',
-          'Email address': 'Адрес электронной почты',
-          'Email is required.': 'Электронная почта обязательна.',
-          'It is not email': 'Это не электронная почта',
+          'Email address': 'Почта',
+          'Email is required.': 'Почта обязательна.',
+          'It is not email': 'Это не почта',
           'Password': 'Пароль',
           'Password is required.': 'Необходим пароль.',
           'Registration': 'Регистрация',
@@ -173,6 +180,7 @@ class Localization extends Translations {
           'Get new': 'Получить новый профиль',
           'Awaiting result..': 'В ожидании результата ..',
           'Theme': 'Тема',
+          'Language': 'Язык',
         },
       };
 }

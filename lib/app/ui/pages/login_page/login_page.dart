@@ -10,7 +10,7 @@ class LoginPage extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Login'),
+          title: Text('Login'.tr),
         ),
         body: SafeArea(
           minimum: const EdgeInsets.all(16),

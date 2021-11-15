@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_hive_template/app/controllers/info_controller.dart';
+import 'package:get/get.dart';
 
 class GetNewButtonWidget extends StatelessWidget {
   const GetNewButtonWidget({
@@ -18,7 +19,7 @@ class GetNewButtonWidget extends StatelessWidget {
             onPressed: () {
               controller.fetchApi();
             },
-            child: const Text('Get new')),
+            child: Text('Get new profile'.tr)),
       ],
     );
   }
