@@ -38,7 +38,12 @@ class InfoPage extends GetView<InfoController> {
                         ],
                       );
                     } else if (snapshot.hasError) {
-                      return InfoErrorWidget(error: snapshot.error);
+                      return Column(
+                        children: [
+                          InfoErrorWidget(error: snapshot.error),
+                          GetNewButtonWidget(controller: controller),
+                        ],
+                      );
                     } else {
                       return const LoadingWidget();
                     }
