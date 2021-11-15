@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_hive_template/app/ui/theme/app_constants.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/info_controller.dart';
 import '../../../data/models/user_model.dart';
+import 'widgets/change_locale_widget.dart';
 import 'widgets/change_theme_widget.dart';
 import 'widgets/error_widget.dart';
 import 'widgets/get_new_button_widget.dart';
@@ -17,39 +19,43 @@ class InfoPage extends GetView<InfoController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "Info page",
+          title: Text(
+            "Information page".tr,
           ),
         ),
         body: SafeArea(
-          child: Column(
-            children: [
-              FutureBuilder<UserModel>(
-                  future: controller.fetchApi(),
-                  builder: (BuildContext context, AsyncSnapshot snapshot) {
-                    if (snapshot.hasData) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const UserAvatarWidget(),
-                          UserInfoCardWidget(controller: controller),
-                          GetNewButtonWidget(controller: controller),
-                        ],
-                      );
-                    } else if (snapshot.hasError) {
-                      return Column(
-                        children: [
-                          InfoErrorWidget(error: snapshot.error),
-                          GetNewButtonWidget(controller: controller),
-                        ],
-                      );
-                    } else {
-                      return const LoadingWidget();
-                    }
-                  }),
-              ChangethemeWidget(),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(defaultPadding),
+            child: Column(
+              children: [
+                FutureBuilder<UserModel>(
+                    future: controller.fetchApi(),
+                    builder: (BuildContext context, AsyncSnapshot snapshot) {
+                      if (snapshot.hasData) {
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const UserAvatarWidget(),
+                            UserInfoCardWidget(controller: controller),
+                            GetNewButtonWidget(controller: controller),
+                          ],
+                        );
+                      } else if (snapshot.hasError) {
+                        return Column(
+                          children: [
+                            InfoErrorWidget(error: snapshot.error),
+                            GetNewButtonWidget(controller: controller),
+                          ],
+                        );
+                      } else {
+                        return const LoadingWidget();
+                      }
+                    }),
+                const ChangethemeWidget(),
+                const ChangeLocaleWidget(),
+              ],
+            ),
           ),
         ));
   }

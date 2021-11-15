@@ -6,17 +6,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_getx_hive_template/app/ui/theme/app_theme.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:logging/logging.dart';
 
-class AppSettingService extends GetxService {
-  final getBox = GetStorage();
-  final log = Logger('AppSettingService');
-  Future<AppSettingService> init() async {
-    setStartTheme(getBox.read("isDarkTheme"));
-    return this;
-  }
-
-  void setStartTheme(bool? isDarkTheme) {
+class AppThemeService {
+  static void setStartTheme(bool? isDarkTheme) {
+    final getBox = GetStorage();
     if (isDarkTheme == null) {
       var brightness = SchedulerBinding.instance!.window.platformBrightness;
       bool isDarkMode = brightness == Brightness.dark;
@@ -34,11 +27,11 @@ class AppSettingService extends GetxService {
     }
   }
 
-  bool? getThemeNow() {
-    return getBox.read("isDarkTheme");
+  static bool? getThemeNow() {
+    return GetStorage().read("isDarkTheme");
   }
 
-  void changeStatusBarColor(bool toDark) {
+  static void changeStatusBarColor(bool toDark) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: toDark
             ? Themes.dark.appBarTheme.backgroundColor

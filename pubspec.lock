@@ -183,6 +183,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.17.1"
+  csv:
+    dependency: "direct dev"
+    description:
+      name: csv
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.0"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -238,7 +245,7 @@ packages:
     source: hosted
     version: "1.0.4"
   flutter_native_splash:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: flutter_native_splash
       url: "https://pub.dartlang.org"
@@ -257,7 +264,7 @@ packages:
     source: hosted
     version: "4.3.8"
   get_cli:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: get_cli
       url: "https://pub.dartlang.org"
@@ -396,27 +403,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-  openapi_generator:
-    dependency: "direct dev"
-    description:
-      name: openapi_generator
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.4"
-  openapi_generator_annotations:
-    dependency: "direct main"
-    description:
-      name: openapi_generator_annotations
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.4"
-  openapi_generator_cli:
-    dependency: transitive
-    description:
-      name: openapi_generator_cli
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.4"
   package_config:
     dependency: transitive
     description:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'app/data/services/init_services.dart';
 import 'app/routes/app_pages.dart';
+import 'app/translation/localization.g.dart';
 import 'app/ui/theme/app_theme.dart';
 
 void main() async {
@@ -13,6 +14,8 @@ void main() async {
     darkTheme: Themes.dark,
     themeMode: ThemeMode.system,
     locale: Get.deviceLocale,
+    fallbackLocale: const Locale('en', 'US'),
+    translations: Localization(),
     defaultTransition: Transition.rightToLeft,
     getPages: AppPages.pages,
     initialRoute: Routes.INITIAL,

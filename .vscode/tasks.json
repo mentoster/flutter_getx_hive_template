@@ -12,6 +12,11 @@
             "label": "generate open api client sdk",
             "type": "shell",
             "command": "flutter pub run build_runner build --delete-conflicting-outputs"
+        },
+        {
+            "label": "generate translations from gsheets",
+            "type": "shell",
+            "command": "cd lib/app/translation/; dart generate_translations.dart"
         }
     ]
 }
