@@ -39,7 +39,7 @@ class BottomnavbarPage extends StatelessWidget {
                 label: 'News',
               ),
               _bottomNavigationBarItem(
-                icon: Icons.person,
+                icon: Icons.info,
                 label: 'Account',
               ),
             ],
