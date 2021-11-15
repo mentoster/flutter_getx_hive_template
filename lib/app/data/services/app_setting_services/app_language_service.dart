@@ -19,6 +19,8 @@ class AppLanguageService extends GetxService {
     if (language != null) {
       Get.updateLocale(Locale(LanguagesNames.getCodeForCountryName(language)));
       GetStorage().write(saveLanguageCode, language);
+    } else {
+      LanguagesNames.updateLocalCode(Get.deviceLocale!.languageCode);
     }
   }
 

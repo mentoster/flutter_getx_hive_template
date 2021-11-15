@@ -13,8 +13,6 @@ void main() async {
     theme: Themes.light,
     darkTheme: Themes.dark,
     themeMode: ThemeMode.system,
-    locale: Get.deviceLocale,
-    fallbackLocale: const Locale('en', 'US'),
     translations: Localization(),
     defaultTransition: Transition.rightToLeft,
     getPages: AppPages.pages,

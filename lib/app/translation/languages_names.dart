@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 class LanguagesNames {
   static List<String> countryNames = [
     'English',
@@ -36,6 +39,19 @@ class LanguagesNames {
       return countryCodes[index];
     } else {
       return countryCodes[0];
+    }
+  }
+
+  static void updateLocalCode(String? countryCode) {
+    if (countryCode != null) {
+      int index = countryCodes.indexOf(countryCode);
+      if (index != -1) {
+        Get.updateLocale(Locale(countryCode));
+      } else {
+        Get.updateLocale(Locale(countryCodes[0]));
+      }
+    } else {
+      Get.updateLocale(Locale(countryCodes[0]));
     }
   }
 }
