@@ -30,7 +30,7 @@ class _ChangeLocaleWidgetState extends State<ChangeLocaleWidget> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text("Language".tr),
+        Text('Language'.tr),
         DropdownButton<String>(
           value: dropdownValue,
           icon: const Icon(Icons.arrow_downward),
